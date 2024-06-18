@@ -11,7 +11,7 @@ class NoteItem extends StatelessWidget {
         horizontal: 15,
       ),
       decoration: BoxDecoration(
-        color: Colors.grey[300],
+        color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular(
           16,
         ),
