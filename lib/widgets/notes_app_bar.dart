@@ -19,7 +19,7 @@ class NotesAppBar extends StatelessWidget {
       ],
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(75),
+          bottomLeft: Radius.circular(70),
         ),
       ),
       backgroundColor: kMainColor,
