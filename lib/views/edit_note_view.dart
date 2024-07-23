@@ -3,7 +3,9 @@ import 'package:notes_app/widgets/custom_text_field.dart';
 import 'package:notes_app/widgets/edit_note_app_bar.dart';
 
 class EditNoteView extends StatelessWidget {
-  const EditNoteView({super.key});
+  const EditNoteView({
+    super.key,
+  });
   static const String id = 'EditNoteView';
 
   @override

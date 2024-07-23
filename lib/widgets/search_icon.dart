@@ -10,9 +10,7 @@ class SearchIcon extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white30,
-        borderRadius: BorderRadius.circular(
-          16,
-        ),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: IconButton(
         onPressed: () {},

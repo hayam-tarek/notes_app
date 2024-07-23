@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/helper/constant.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.text});
+  const CustomButton({
+    super.key,
+    required this.text,
+  });
   final String text;
 
   @override

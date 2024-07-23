@@ -3,7 +3,9 @@ import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
 class AddNoteSheet extends StatelessWidget {
-  const AddNoteSheet({super.key});
+  const AddNoteSheet({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -13,7 +13,9 @@ class NotesAppBar extends StatelessWidget {
     return AppBar(
       actions: const [
         Padding(
-          padding: EdgeInsets.only(right: 10),
+          padding: EdgeInsets.only(
+            right: 10,
+          ),
           child: SearchIcon(),
         ),
       ],

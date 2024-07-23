@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NotesText extends StatelessWidget {
-  const NotesText({
-    super.key,
-  });
+  const NotesText({super.key});
 
   @override
   Widget build(BuildContext context) {

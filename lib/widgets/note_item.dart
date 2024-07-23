@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

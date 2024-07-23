@@ -3,9 +3,7 @@ import 'package:notes_app/helper/constant.dart';
 import 'package:notes_app/widgets/save_icon.dart';
 
 class EditNoteAppBar extends StatelessWidget {
-  const EditNoteAppBar({
-    super.key,
-  });
+  const EditNoteAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
