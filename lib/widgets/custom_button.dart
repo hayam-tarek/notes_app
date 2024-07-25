@@ -6,9 +6,11 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
+    this.isLoading = false,
   });
   final String text;
   final void Function()? onPressed;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,13 +25,21 @@ class CustomButton extends StatelessWidget {
         ),
         color: kMainColor,
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        child: isLoading
+            ? const SizedBox(
+                height: 20,
+                width: 20,
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              )
+            : Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
       ),
     );
   }
