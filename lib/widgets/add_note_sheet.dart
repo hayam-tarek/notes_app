@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/addNoteCubit/add_note_cubit.dart';
+import 'package:notes_app/cubits/notesCubit/notes_cubit.dart';
 import 'package:notes_app/helper/snack_bar.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
 
@@ -19,9 +20,13 @@ class AddNoteSheet extends StatelessWidget {
         listener: (context, state) {
           if (state is AddNoteFailure) {
             log('failure: ${state.message}');
+            ScaffoldMessenger.of(context).showSnackBar(
+              customSnackBar(text: state.message),
+            );
           }
           if (state is AddNoteSuccess) {
             log('done');
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
             ScaffoldMessenger.of(context).showSnackBar(
               customSnackBar(text: "The note was added successfully"),
