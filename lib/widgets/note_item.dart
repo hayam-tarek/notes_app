@@ -14,7 +14,7 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, EditNoteView.id);
+        Navigator.pushNamed(context, EditNoteView.id, arguments: note);
       },
       child: Container(
         padding: const EdgeInsets.symmetric(

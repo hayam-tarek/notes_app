@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 import 'package:notes_app/widgets/edit_note_app_bar.dart';
 
@@ -10,25 +11,27 @@ class EditNoteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: PreferredSize(
+    NoteModel note = ModalRoute.of(context)!.settings.arguments as NoteModel;
+    return Scaffold(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(75),
         child: EditNoteAppBar(),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 16,
         ),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            CustomTextFormField(hintText: 'Title'),
-            SizedBox(
+            CustomTextFormField(initialValue: note.title, hintText: 'Title'),
+            const SizedBox(
               height: 15,
             ),
             CustomTextFormField(
+              initialValue: note.content,
               hintText: 'Content',
               maxLines: 5,
             ),
