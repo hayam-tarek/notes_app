@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/helper/snack_bar.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
@@ -47,7 +48,11 @@ class NoteItem extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                  ScaffoldMessenger.of(context).showSnackBar(customSnackBar(
+                      text: "The note was deleted successfully"));
+                },
                 icon: const Icon(
                   Icons.delete_rounded,
                   // color: Colors.white,
