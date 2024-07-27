@@ -22,8 +22,8 @@ class _NotesListViewState extends State<NotesListView> {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-        List<NoteModel> listOfNotes =
-            BlocProvider.of<NotesCubit>(context).listOfNotes ?? [];
+        List<NoteModel> notes =
+            BlocProvider.of<NotesCubit>(context).listOfNotes!.reversed.toList();
 
         return ListView.separated(
           separatorBuilder: (context, index) {
@@ -33,9 +33,9 @@ class _NotesListViewState extends State<NotesListView> {
             );
           },
           physics: const BouncingScrollPhysics(),
-          itemCount: listOfNotes.length,
+          itemCount: notes.length,
           itemBuilder: (BuildContext context, int index) {
-            return const NoteItem();
+            return NoteItem(note: notes[index]);
           },
         );
       },

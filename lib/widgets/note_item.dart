@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({
     super.key,
+    required this.note,
   });
+
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,8 @@ class NoteItem extends StatelessWidget {
           horizontal: 15,
         ),
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
+          // color: Colors.grey.shade200,
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(
             16,
           ),
@@ -27,16 +32,16 @@ class NoteItem extends StatelessWidget {
           children: [
             ListTile(
               contentPadding: const EdgeInsets.all(0),
-              title: const Text(
-                "Title",
-                style: TextStyle(
+              title: Text(
+                note.title,
+                style: const TextStyle(
                   // color: Colors.white,
                   fontSize: 25,
                 ),
               ),
-              subtitle: const Text(
-                "Subtitle",
-                style: TextStyle(
+              subtitle: Text(
+                note.content,
+                style: const TextStyle(
                   // color: Colors.white60,
                   fontSize: 20,
                 ),
@@ -50,13 +55,13 @@ class NoteItem extends StatelessWidget {
                 ),
               ),
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: Text(
-                  '2024-5-31',
-                  style: TextStyle(
+                  note.createdAt,
+                  style: const TextStyle(
                     // color: Colors.white60,
                     fontSize: 12,
                   ),
