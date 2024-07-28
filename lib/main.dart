@@ -5,7 +5,6 @@ import 'package:notes_app/cubits/notesCubit/notes_cubit.dart';
 import 'package:notes_app/helper/constant.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/simple_bloc_observer.dart';
-import 'package:notes_app/views/edit_note_view.dart';
 import 'package:notes_app/views/notes_view.dart';
 
 void main() async {
@@ -33,7 +32,7 @@ class NotesApp extends StatelessWidget {
         ),
         routes: {
           NotesView.id: (context) => const NotesView(),
-          EditNoteView.id: (context) => const EditNoteView(),
+          // EditNoteView.id: (context) => const EditNoteView(),
         },
         initialRoute: NotesView.id,
       ),

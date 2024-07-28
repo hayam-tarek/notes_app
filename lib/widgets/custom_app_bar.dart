@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/helper/constant.dart';
-import 'package:notes_app/widgets/save_icon.dart';
+import 'package:notes_app/widgets/custom_icon.dart';
 
-class EditNoteAppBar extends StatelessWidget {
-  const EditNoteAppBar({super.key});
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({
+    super.key,
+    required this.onPressed,
+    required this.title,
+    required this.icon,
+  });
+  final void Function()? onPressed;
+  final String title;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +23,13 @@ class EditNoteAppBar extends StatelessWidget {
         ),
       ),
       backgroundColor: kMainColor,
-      actions: const [
+      actions: [
         Padding(
-          padding: EdgeInsets.only(right: 10),
-          child: SaveIcon(),
+          padding: const EdgeInsets.only(right: 10),
+          child: CustomIcon(
+            icon: icon,
+            onPressed: onPressed,
+          ),
         )
       ],
       leading: IconButton(
@@ -30,9 +41,9 @@ class EditNoteAppBar extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      title: const Text(
-        'Edit Note',
-        style: TextStyle(
+      title: Text(
+        title,
+        style: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
