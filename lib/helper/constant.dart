@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 // const Color kMainColor = Colors.cyan;
 const Color kMainColor = Color(0xff05299E);
-const Color kSecColor = Color.fromRGBO(158, 158, 158, 1);
 const kNotesBox = 'notes_box';
 const List<Color> kColorsList = [
   Color(0xff05299E),

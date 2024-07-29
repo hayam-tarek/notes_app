@@ -43,14 +43,14 @@ class NoteItem extends StatelessWidget {
               title: Text(
                 note.title,
                 style: const TextStyle(
-                  // color: Colors.white,
+                  color: Colors.white,
                   fontSize: 25,
                 ),
               ),
               subtitle: Text(
                 note.content,
                 style: const TextStyle(
-                  // color: Colors.white60,
+                  color: Colors.white70,
                   fontSize: 20,
                 ),
               ),
@@ -63,7 +63,7 @@ class NoteItem extends StatelessWidget {
                 },
                 icon: const Icon(
                   Icons.delete_rounded,
-                  // color: Colors.white,
+                  color: Colors.white,
                   size: 30,
                 ),
               ),
@@ -75,7 +75,7 @@ class NoteItem extends StatelessWidget {
                 child: Text(
                   note.createdAt,
                   style: const TextStyle(
-                    // color: Colors.white60,
+                    color: Colors.white60,
                     fontSize: 12,
                   ),
                 ),

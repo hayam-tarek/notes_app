@@ -74,7 +74,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       color: BlocProvider.of<AddNoteCubit>(context)
                               .noteColor
                               ?.value ??
-                          kSecColor.value,
+                          kMainColor.value,
                     );
                     BlocProvider.of<AddNoteCubit>(context).addNote(note);
                   } else {
