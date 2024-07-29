@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/helper/constant.dart';
+import 'package:notes_app/widgets/custom_icon.dart';
 import 'package:notes_app/widgets/notes_text.dart';
-import 'package:notes_app/widgets/search_icon.dart';
 
 class NotesAppBar extends StatelessWidget {
   const NotesAppBar({
     super.key,
+    required this.scaffoldKey,
   });
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      actions: const [
+      actions: [
         Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             right: 10,
           ),
-          child: SearchIcon(),
+          child: CustomIcon(
+            onPressed: () {
+              scaffoldKey.currentState!.openEndDrawer();
+            },
+            icon: Icons.menu,
+          ),
         ),
       ],
       shape: const RoundedRectangleBorder(
