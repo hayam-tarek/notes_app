@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:notes_app/cubits/addNoteCubit/add_note_cubit.dart';
+import 'package:notes_app/helper/constant.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/colors_listview.dart';
 import 'package:notes_app/widgets/custom_button.dart';
@@ -70,7 +71,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       title: title!,
                       content: content!,
                       createdAt: formattedCurrentDate,
-                      color: Colors.pink.value,
+                      color: BlocProvider.of<AddNoteCubit>(context)
+                              .noteColor
+                              ?.value ??
+                          kSecColor.value,
                     );
                     BlocProvider.of<AddNoteCubit>(context).addNote(note);
                   } else {
