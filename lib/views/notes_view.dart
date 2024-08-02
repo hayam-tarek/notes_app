@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/helper/constant.dart';
 import 'package:notes_app/widgets/add_note_sheet.dart';
+import 'package:notes_app/widgets/drawer_content.dart';
 import 'package:notes_app/widgets/notes_app_bar.dart';
 import 'package:notes_app/widgets/notes_list_view.dart';
 
@@ -20,7 +21,9 @@ class _NotesViewState extends State<NotesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: const Drawer(),
+      endDrawer: const Drawer(
+        child: DrawerContent(),
+      ),
       key: scaffoldKey,
       floatingActionButton: FloatingActionButton(
         backgroundColor: kMainColor,

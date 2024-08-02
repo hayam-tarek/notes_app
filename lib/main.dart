@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -12,29 +13,48 @@ void main() async {
   Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>(kNotesBox);
   Bloc.observer = SimpleBlocObserver();
-  runApp(const NotesApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  final savedThemeMode = await AdaptiveTheme.getThemeMode();
+  runApp(NotesApp(
+    savedThemeMode: savedThemeMode,
+  ));
 }
 
 class NotesApp extends StatelessWidget {
-  const NotesApp({super.key});
-
+  const NotesApp({
+    super.key,
+    this.savedThemeMode,
+  });
+  final AdaptiveThemeMode? savedThemeMode;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => NotesCubit(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
+      child: AdaptiveTheme(
+        light: ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          colorSchemeSeed: kMainColor,
           fontFamily: 'Rowdies',
-          // useMaterial3: false,
-          // brightness: Brightness.dark,
         ),
-        routes: {
-          NotesView.id: (context) => const NotesView(),
-          // EditNoteView.id: (context) => const EditNoteView(),
-        },
-        initialRoute: NotesView.id,
+        dark: ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.dark,
+          colorSchemeSeed: kMainColor,
+          fontFamily: 'Rowdies',
+        ),
+        initial: savedThemeMode ?? AdaptiveThemeMode.light,
+        builder: (theme, darkTheme) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: theme,
+          darkTheme: darkTheme,
+          routes: {
+            NotesView.id: (context) => const NotesView(),
+            // EditNoteView.id: (context) => const EditNoteView(),
+          },
+          initialRoute: NotesView.id,
+        ),
       ),
     );
   }
