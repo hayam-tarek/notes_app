@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/addNoteCubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notesCubit/notes_cubit.dart';
-import 'package:notes_app/helper/snack_bar.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
+import 'package:notes_app/widgets/snack_bar.dart';
 
 class AddNoteSheet extends StatelessWidget {
   const AddNoteSheet({

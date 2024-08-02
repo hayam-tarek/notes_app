@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notesCubit/notes_cubit.dart';
-import 'package:notes_app/helper/snack_bar.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 import 'package:notes_app/widgets/edit_note_color_listview.dart';
+import 'package:notes_app/widgets/snack_bar.dart';
 
 class EditNoteView extends StatefulWidget {
   const EditNoteView({

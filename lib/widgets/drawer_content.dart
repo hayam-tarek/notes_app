@@ -1,5 +1,6 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_search.dart';
 
 class DrawerContent extends StatefulWidget {
   const DrawerContent({super.key});
@@ -26,6 +27,17 @@ class _DrawerContentState extends State<DrawerContent> {
               AdaptiveTheme.of(context).setLight();
             }
           },
+        ),
+        ListTile(
+          onTap: () {
+            showSearch(context: context, delegate: CustomSearch());
+          },
+          title: const Text(
+            'Search',
+          ),
+          trailing: const Icon(
+            Icons.search,
+          ),
         ),
       ],
     );
