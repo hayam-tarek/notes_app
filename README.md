@@ -17,6 +17,8 @@ A simple Flutter application for managing notes.
 - Hive (local storage)
 - Cubit (state management)
 
-[![Notes App video](https://github.com/user-attachments/assets/2823cef1-517e-49df-87a6-65423485d3c6)](https://github.com/user-attachments/assets/11e9a304-4ab1-445b-9cab-2ac07eee202d)
+[![Notes App video](https://github.com/user-attachments/assets/2823cef1-517e-49df-87a6-65423485d3c6)](https://github.com/user-attachments/assets/c434c5fa-a3fa-4b3e-afeb-209472589ace)
 
-[![Notes App video]](https://github.com/user-attachments/assets/e91cd421-87d6-433d-b3cd-475229d88418)
+
+
+
